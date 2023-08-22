@@ -22,21 +22,22 @@ int _printf(const char *format, ...)
 	{
 		if (format[iter] == '%')
 		{
-			switch (format[iter + 1])
+			if (format[iter + 1] == 'c')
 			{
-				case 'c':
-					num = va_arg(args, int);
-					counter += _putchar(num);
-					break;
-				case 's':
-					str = va_arg(args, char *);
-					counter += _puts_recursion(str);
-					break;
-					case '%':
-					counter += _putchar('%');
-					break;
-				default:
-					break;
+				num = va_arg(args, int);
+				counter += _putchar(num);
+			}
+			else if (format[iter + 1] == 's')
+			{
+				str = va_arg(args, char *);
+				counter += _puts_recursion(str);
+			}
+			else if (format[iter + 1] == '%')
+				counter += _putchar('%');
+			else if ((format[iter + 1] == 'i') || (format[iter + 1] == 'd'))
+			{
+				num = va_arg(args, int);
+				print_number(num);
 			}
 			iter += 2;
 		}
