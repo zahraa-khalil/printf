@@ -18,3 +18,18 @@ Helper function:
 _putchar()
 print_number() -> (function prints an integer, without using long, arrays, or pointers)
 puts_recursion() -> (function that fills memory with a constant byte.)
+
+
+local files and directories
+.gitignore;
+main.c
+./git
+
+
+manual: 
+man_3_printf
+
+
+
+
+
