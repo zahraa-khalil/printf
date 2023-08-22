@@ -1,41 +1,57 @@
 #include "main.h"
 
 /**
- * _printf - function that produces output according to a format.
- * @format: the format string
- * Return: number of characters printed (excluding the null)
+ *_printf - function that produces output according to a format.
+ *@format: the format string
+ *Return: number of characters printed (excluding the null)
  */
 
 int _printf(const char *format, ...)
 {
-    int counter = 0;
-    char *argument;
-    /* list of variadic func arguments [args] */
-    va_list args;
+	/*list of variadic func arguments[args] */
+	va_list args;
+	int counter, first_percent;
 
-    /*access to variadic function arguments. */
-    va_start(args, format);
+	counter = 0;
+	first_percent = 0;
+	/*access to variadic function arguments. */
+	va_start(args, format);
 
-    while (*format != '\0')
-    {
-       /* argument = va_arg(args, char *);*/
-       // printf("%s\n", format);
-        if (*format == '%')
-        {
-            argument = va_arg(args, char *);
-            _printf(*argument);
-            counter++;
-        }
+	while (*format != '\0')
+	{
+		if (*format == '%')
+		{
+			if (first_percent)
+			{
+				va_arg(args, char *);
+			}
 
-        putchar(*format);
-        counter++;
-        format++;
+			first_percent++;
+			switch (*(format + 1))
+			{
+				case 'd':
+					print_number(*args);
+					format += 2;
+					break;
 
+				case 'i':
+					print_number(*args);
+					format += 2;
+					break;
+				default:
+					break;
+			}
 
-    }
+			counter++;
+		}
 
-    /*This ends the traversal of the variadic function arguments. */
-    va_end(args);
+		_putchar(*format);
+		counter++;
+		format++;
+	}
 
-    return (counter);
+	/*This ends the traversal of the variadic function arguments. */
+	va_end(args);
+
+	return (counter);
 }
