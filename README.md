@@ -13,3 +13,8 @@ Structure:
 - This string is composed of characters, each of which is printed exactly as it appears
 - printf has two arguments. The ﬁrst is a string: "I am %d years old\n" . The sec- ond is an integer,
 
+
+Helper function: 
+_putchar()
+print_number() -> (function prints an integer, without using long, arrays, or pointers)
+puts_recursion() -> (function that fills memory with a constant byte.)
