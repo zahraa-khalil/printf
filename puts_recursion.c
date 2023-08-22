@@ -3,7 +3,7 @@
 /**
  **_puts_recursion - a function that fills memory with a constant byte.
  *@s: the address of memory
- *Return: Nothing.
+ *Return: size of str.
  */
 
 int _puts_recursion(char *s)

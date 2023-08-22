@@ -26,14 +26,14 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					num = va_arg(args, int);
-					counter+= _putchar(num);
+					counter += _putchar(num);
 					break;
 				case 's':
 					str = va_arg(args, char *);
-					counter+= _puts_recursion(str);
+					counter += _puts_recursion(str);
 					break;
 					case '%':
-					counter+= _putchar('%');
+					counter += _putchar('%');
 					break;
 				default:
 					break;
