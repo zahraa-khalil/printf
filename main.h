@@ -6,7 +6,8 @@
 
 int _putchar(char c);
 int print_number(int n);
-int _puts_recursion(char *s);
+void _puts_recursion(char *s);
+int _strlen(char *s);
 int _printf(const char *format, ...);
 
 #endif

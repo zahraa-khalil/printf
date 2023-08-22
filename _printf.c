@@ -1,11 +1,9 @@
 #include "main.h"
-
 /**
  *_printf - function that produces output according to a format.
  *@format: the format string
  *Return: number of characters printed (excluding the null)
  */
-
 int _printf(const char *format, ...)
 {
 	va_list args;
@@ -30,7 +28,8 @@ int _printf(const char *format, ...)
 			else if (format[iter + 1] == 's')
 			{
 				str = va_arg(args, char *);
-				counter += _puts_recursion(str);
+				counter += _strlen(str);
+				_puts_recursion(str);
 			}
 			else if (format[iter + 1] == '%')
 				counter += _putchar('%');
@@ -40,9 +39,7 @@ int _printf(const char *format, ...)
 				counter += print_number(num);
 			}
 			else
-			{
 				counter += _putchar(format[iter + 1]);
-			}
 			iter += 2;
 		}
 		_putchar(format[iter]);
