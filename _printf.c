@@ -30,9 +30,11 @@ int _printf(const char *format, ...)
 					_putchar(num);
 					break;
 				case 's':
-
 					str = va_arg(args, char *);
 					_puts_recursion(str);
+					break;
+					case '%':
+					_putchar('%');
 					break;
 				default:
 					break;
