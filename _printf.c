@@ -26,20 +26,19 @@ int _printf(const char *format, ...)
 			{
 				case 'c':
 					num = va_arg(args, int);
-					_putchar(num);
+					counter+= _putchar(num);
 					break;
 				case 's':
 					str = va_arg(args, char *);
-					_puts_recursion(str);
+					counter+= _puts_recursion(str);
 					break;
 					case '%':
-					_putchar('%');
+					counter+= _putchar('%');
 					break;
 				default:
 					break;
 			}
 			iter += 2;
-			counter++;
 		}
 		_putchar(format[iter]);
 		counter++;
