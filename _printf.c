@@ -27,30 +27,26 @@ int _printf(const char *format, ...)
 			case 'd':
 			case 'i':
 
-				num = va_arg(args, int); // Retrieve the integer argument
+				num = va_arg(args, int); /*** Retrieve the integer argument ***/
 				print_number(num);
 				format += 2;
 				break;
 			case 'c':
 
-				num = va_arg(args, int); // Retrieve the integer argument
+				num = va_arg(args, int); /*** Retrieve the integer argument ***/
 				_putchar(num);
 				format += 2;
 				break;
 			default:
 				break;
 			}
-
 			counter++;
 		}
-
 		_putchar(*format);
 		counter++;
 		format++;
 	}
-
 	/*This ends the traversal of the variadic function arguments. */
 	va_end(args);
-
 	return (counter);
 }
