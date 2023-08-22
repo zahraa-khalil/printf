@@ -9,20 +9,20 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int counter, num;
+	int counter, num, iter;
 	char *str;
 
-	counter = 0;
+	counter = 0, iter = 0;
 	va_start(args, format);
 	if (!format || (format[0] == '%' && !format[1]))
 		return (-1);
 	if (format[0] == '%' && format[1] == ' ' && !format[2])
 		return (-1);
-	while (*format != '\0')
+	while (format[iter] != '\0')
 	{
-		if (*format == '%')
+		if (format[iter] == '%')
 		{
-			switch (*(format + 1))
+			switch (format[iter + 1])
 			{
 				case 'c':
 					num = va_arg(args, int);
@@ -38,12 +38,12 @@ int _printf(const char *format, ...)
 				default:
 					break;
 			}
-			format += 2;
+			iter += 2;
 			counter++;
 		}
-		_putchar(*format);
+		_putchar(format[iter]);
 		counter++;
-		format++;
+		iter++;
 	}
 	va_end(args);
 	return ((counter == 0) ? -1 : counter);
