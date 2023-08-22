@@ -41,8 +41,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				num = va_arg(args, int);
-				counter += _putchar(num);
+				counter += _putchar(format[iter + 1]);
 			}
 			iter += 2;
 		}
