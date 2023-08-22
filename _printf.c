@@ -26,13 +26,11 @@ int _printf(const char *format, ...)
 			{
 			case 'd':
 			case 'i':
-
 				num = va_arg(args, int); /*** Retrieve the integer argument ***/
 				print_number(num);
 				format += 2;
 				break;
 			case 'c':
-
 				num = va_arg(args, int); /*** Retrieve the integer argument ***/
 				_putchar(num);
 				format += 2;
