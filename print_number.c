@@ -3,8 +3,7 @@
 /**
  * print_number - print an integer, without using long, arrays, or pointers
  * @n: number to be printed
- * 
- * return count
+ * Return: count
  */
 
 int print_number(int n)
@@ -39,5 +38,5 @@ int print_number(int n)
 			tens /= 10;
 		}
 	}
-	return(count);
+	return (count);
 }
