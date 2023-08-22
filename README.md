@@ -8,4 +8,8 @@ Requirements:
 - Returns: the number of characters printed (excluding the null byte used to end output to strings)
 
 
+Structure: 
+- printf takes one argument: a string of characters to be printed. 
+- This string is composed of characters, each of which is printed exactly as it appears
+- printf has two arguments. The ﬁrst is a string: "I am %d years old\n" . The sec- ond is an integer,
 
