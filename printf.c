@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	/*list of variadic func arguments[args] */
 	va_list args;
-	int counter, first_percent;
+	int counter, first_percent, num;
 
 	counter = 0;
 	first_percent = 0;
@@ -21,25 +21,18 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			if (first_percent)
-			{
-				va_arg(args, char *);
-			}
-
 			first_percent++;
 			switch (*(format + 1))
 			{
-				case 'd':
-					print_number(*args);
-					format += 2;
-					break;
+			case 'd':
+			case 'i':
 
-				case 'i':
-					print_number(*args);
-					format += 2;
-					break;
-				default:
-					break;
+				num = va_arg(args, int); // Retrieve the integer argument
+				print_number(num);
+				format += 2;
+				break;
+			default:
+				break;
 			}
 
 			counter++;
