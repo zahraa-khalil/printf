@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 			case 'c':
 
 				num = va_arg(args, int); // Retrieve the integer argument
-				print_number(num);
+				_putchar(num);
 				format += 2;
 				break;
 			default:
