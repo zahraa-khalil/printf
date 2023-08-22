@@ -20,11 +20,6 @@ int _printf(const char *format, ...)
 		{
 			switch (*(format + 1))
 			{
-				case 'd':
-				case 'i':
-					num = va_arg(args, int);
-					print_number(num); /***Retrieve the integer argument ***/
-					break;
 				case 'c':
 					num = va_arg(args, int);
 					_putchar(num);
